@@ -8,6 +8,7 @@
 #include "Resource_M.h"
 #include "Kismet/GameplayStatics.h"
 #include "BuildingPart.h"
+#include "PlayerWidget.h"
 #include "PlayerChar.generated.h"
 
 
@@ -28,6 +29,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+
+
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -46,10 +49,11 @@ public:
 	UFUNCTION()
 		void FindObject();
 
-	
-
+	//establishing camera component
 	UPROPERTY(VisibleAnywhere)
 		UCameraComponent* PlayerCamComp;
+
+		//Establishing health, hunger, and stamina
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
 	float Health = 100.0f;
@@ -59,6 +63,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player Stats")
 	float Stamina = 100.0f;
+
+	//Establishing resources variables: wood, stone, berry with integer amounts and arrays for resources and names of resources
 
 	UPROPERTY(EditAnywhere, Category = "Resources")
 	int Wood;
@@ -89,6 +95,12 @@ public:
 
 	UPROPERTY()
 		ABuildingPart* spawnedPart;
+
+		//adding player widget function reference
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPlayerWidget* playerUI;
+
+		//Set cusstom event for function of setting health, hunger, stamina, decreasing stats
 
 	UFUNCTION(BlueprintCallable)
 	void SetHealth(float amount);

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+//including text render for testing purposes establsh staticmesh component to use in class
 #include "Components/TextRenderComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Resource_M.generated.h"
@@ -25,9 +26,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	//Adding variables to be implemented
+
 	UPROPERTY(EditAnywhere)
 		FString resourceName = "Wood";
 
+	//the amount of resources received when hit
 	UPROPERTY(EditAnywhere)
 		int resourceAmount = 5;
 

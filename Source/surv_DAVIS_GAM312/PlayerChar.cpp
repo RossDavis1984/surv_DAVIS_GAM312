@@ -171,7 +171,7 @@ void APlayerChar::SetHunger(float amount)
 
 void APlayerChar::SetStamina(float amount)
 {
-	if (Stamina + amount <= 100)
+	if (Stamina + amount < 100)
 	{
 		Stamina = Stamina + amount;
 	}
@@ -240,7 +240,7 @@ void APlayerChar::UpdateResources(float woodAmount, float stoneAmount, FString b
 
 void APlayerChar::SpawnBuilding(int buildingID, bool& isSuccess)
 {
-	if (isBuilding)
+	if (!isBuilding)
 	{
 		if (BuildingArray[buildingID] >= 1)
 		{

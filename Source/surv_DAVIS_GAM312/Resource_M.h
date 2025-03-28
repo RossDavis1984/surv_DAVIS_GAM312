@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-//including text render for testing purposes establsh staticmesh component to use in class
+//including text render for testing purposes establish staticmesh component to use in class
 #include "Components/TextRenderComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Resource_M.generated.h"

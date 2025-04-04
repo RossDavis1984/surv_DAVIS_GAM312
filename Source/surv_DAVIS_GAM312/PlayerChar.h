@@ -9,6 +9,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "BuildingPart.h"
 #include "PlayerWidget.h"
+#include "ObjectiveWidget.h"
 #include "PlayerChar.generated.h"
 
 
@@ -100,7 +101,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UPlayerWidget* playerUI;
 
-		//Set cusstom event for function of setting health, hunger, stamina, decreasing stats
+	//adding function for objectives widget
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UObjectiveWidget* objWidget;
+
+	UPROPERTY()
+	float objectsBuilt;
+
+	UPROPERTY()
+	float matsCollected;
+
+
+		//Set custom event for function of setting health, hunger, stamina, decreasing stats
 
 	UFUNCTION(BlueprintCallable)
 	void SetHealth(float amount);

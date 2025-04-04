@@ -4,19 +4,21 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "PlayerWidget.generated.h"
+#include "ObjectiveWidget.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class SURV_DAVIS_GAM312_API UPlayerWidget : public UUserWidget
+class SURV_DAVIS_GAM312_API UObjectiveWidget : public UUserWidget
 {
 	GENERATED_BODY()
-	//function to update player stat bars
+	
+
 public:
 	UFUNCTION(BlueprintImplementableEvent)
-	void UpdateBars(float Health1, float Hunger1, float Stamina1);
+	void UpdatematOBJ(float matsCollected);
 
-	
+	UFUNCTION(BlueprintImplementableEvent)
+	void UpdatebuildObj(float objectsBuilt);
 };
